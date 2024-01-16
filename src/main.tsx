@@ -23,6 +23,6 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       <RouterProvider router={router} />
       <ReactQueryDevtools position="bottom-right" />
     </QueryClientProvider>
-    // {/* <App /> */}
+    {/* <App /> */}
   </React.StrictMode>
 );

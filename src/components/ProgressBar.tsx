@@ -1,11 +1,9 @@
 import ms from "ms";
 import { useEffect } from "react";
 import useStore from "../service/store";
-import Redirect from "./Redirect";
 
 export function ProgressBar() {
   const setProgress = useStore((state) => state.setProgress);
-  const progress = useStore((state) => state.progress);
 
   useEffect(() => {
     const progressBar = document.getElementById("animated-progress");
@@ -18,16 +16,19 @@ export function ProgressBar() {
         { width: "0%", backgroundColor: "#dc3545" }, // red
       ],
       {
-        duration: ms("10s"), // 30 seconds
+        duration: ms("30s"), // 30 seconds
         easing: "linear",
       }
     );
 
-    animation.onfinish = () => {
-      setProgress("0%"); // Animation is finished, trigger action here
+    const handleAnimationFinish = () => {
+      setProgress("0%");
     };
 
+    animation.onfinish = handleAnimationFinish;
+
     return () => {
+      animation.removeEventListener("finish", handleAnimationFinish);
       animation.cancel();
     };
   }, []);
