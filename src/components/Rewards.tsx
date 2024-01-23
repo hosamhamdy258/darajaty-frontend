@@ -1,5 +1,3 @@
-import React from "react";
-
 function Rewards() {
   return <div>Rewards</div>;
 }

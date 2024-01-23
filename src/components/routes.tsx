@@ -9,7 +9,6 @@ import Rules from "./Rules";
 import ReviewQuestions from "./ReviewQuestions";
 import ComingSoon from "./ComingSoon";
 import Register from "./Register";
-import Example from "./Example";
 import LoginUserRoute from "./LoginUserRoute";
 import Login from "./Login";
 import Logout from "./Logout";
@@ -33,7 +32,6 @@ const publicPaths = [
   { path: "coming soon", element: <ComingSoon /> },
   { path: "Signup", element: <Register /> },
   { path: "Login", element: <Login /> },
-  { path: "ex", element: <Example /> },
 ];
 const PrivatePaths = [
   { path: "Question of the day", element: <Questions /> },
