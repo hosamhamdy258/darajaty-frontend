@@ -26,7 +26,7 @@ interface ErrorData {
 export interface Data {
   id: string;
   question: string;
-  question_choices: QuestionChoice[];
+  choices_set: QuestionChoice[];
 }
 export interface QuestionChoice {
   id: string;

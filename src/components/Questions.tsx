@@ -37,7 +37,7 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 function QuestionsForm({ questionData }: { questionData: Data }) {
-  const { id, question, question_choices } = questionData;
+  const { id, question, choices_set } = questionData;
   const {
     register,
     handleSubmit,
@@ -75,7 +75,7 @@ function QuestionsForm({ questionData }: { questionData: Data }) {
           role="group"
           aria-label="Basic radio toggle button group"
         >
-          {question_choices.map((choice, index) => (
+          {choices_set.map((choice, index) => (
             <React.Fragment key={index}>
               <input
                 {...register("answer")}
