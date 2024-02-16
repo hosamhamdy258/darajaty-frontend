@@ -27,6 +27,7 @@ export interface Data {
   id: string;
   question: string;
   choices_set: QuestionChoice[];
+  time: number;
 }
 export interface QuestionChoice {
   id: string;

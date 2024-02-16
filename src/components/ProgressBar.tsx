@@ -1,8 +1,10 @@
 import ms from "ms";
 import { useEffect } from "react";
 import useStore from "../service/store";
-
-export function ProgressBar() {
+interface props {
+  time: number;
+}
+export function ProgressBar({ time }: props) {
   const setProgress = useStore((state) => state.setProgress);
 
   useEffect(() => {
@@ -16,7 +18,7 @@ export function ProgressBar() {
         { width: "0%", backgroundColor: "#dc3545" }, // red
       ],
       {
-        duration: ms("30s"), // 30 seconds
+        duration: ms(`${time}s`), // 30 seconds
         easing: "linear",
       }
     );

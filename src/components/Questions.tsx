@@ -37,7 +37,7 @@ const schema = z.object({
 type FormData = z.infer<typeof schema>;
 
 function QuestionsForm({ questionData }: { questionData: Data }) {
-  const { id, question, choices_set } = questionData;
+  const { id, question, choices_set, time } = questionData;
   const {
     register,
     handleSubmit,
@@ -69,7 +69,7 @@ function QuestionsForm({ questionData }: { questionData: Data }) {
     <div className="container">
       <form className="row my-3" onSubmit={handleSubmit(onSubmit)}>
         <p className="text-center fs-4">{question}</p>
-        <ProgressBar />
+        <ProgressBar time={time} />
         <div
           className="btn-group-vertical col-12"
           role="group"
