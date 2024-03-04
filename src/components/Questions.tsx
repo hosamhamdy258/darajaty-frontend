@@ -47,7 +47,7 @@ function QuestionsForm({ questionData }: { questionData: Data }) {
   const { mutate, isLoading, isSuccess, isError, data } = useAnswer();
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
-    mutate({ choice: data.answer, question: id });
+    mutate({ fk_choice: data.answer, fk_question: id });
   };
   const progress = useStore((state) => state.progress);
   if (progress == "0%") {
