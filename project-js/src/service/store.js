@@ -38,6 +38,7 @@ const useStore = create(
   }))
 );
 
+// eslint-disable-next-line no-undef
 if (process.env.NODE_ENV === "development") {
   mountStoreDevtool("Store", useStore);
 }
