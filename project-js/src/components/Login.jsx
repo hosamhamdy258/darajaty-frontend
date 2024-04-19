@@ -42,8 +42,10 @@ function Login() {
     }
   }, []);
 
-  const onSubmit = (data) =>
+  const onSubmit = (data) => {
+    sessionStorage.removeItem("token");
     mutate({ email: data.email, password: data.password });
+  };
 
   return (
     <div className="container">

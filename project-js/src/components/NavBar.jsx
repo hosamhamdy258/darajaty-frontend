@@ -13,12 +13,11 @@ function NavBar() {
             Darajaty
           </NavLink>
           {user.authenticated && (
-            <>
-              <div>{user.name}</div>
-              <div className="text-success">Points : {user.wallet}</div>
-            </>
+            <div className="row text-center text-truncate w-50">
+              <div className="col">{user.name} </div>
+              <div className="col text-success">Points : {user.wallet}</div>
+            </div>
           )}
-
           <button
             className={`navbar-toggler btn btn-${color} border-${color}`}
             type="button"
