@@ -3,17 +3,17 @@ import color from "../service/ThemeColor";
 function Home() {
   const cards = [
     "Question Of The Day",
-    "Rewards",
-    "Add Questions",
+    // "Rewards",
+    // "Add Questions",
     "Rules",
-    "Review Questions",
+    // "Review Questions",
     "Coming Soon",
   ];
 
   return (
     <>
       <div className="container text-center">
-        <div className="row row-cols-2">
+        <div className="row row-cols-1">
           {cards.map((value) => (
             <div className="col" key={value}>
               <Link

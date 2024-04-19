@@ -12,6 +12,13 @@ function NavBar() {
           <NavLink className="navbar-brand" to={"/"}>
             Darajaty
           </NavLink>
+          {user.authenticated && (
+            <>
+              <div>{user.name}</div>
+              <div className="text-success">Points : {user.wallet}</div>
+            </>
+          )}
+
           <button
             className={`navbar-toggler btn btn-${color} border-${color}`}
             type="button"

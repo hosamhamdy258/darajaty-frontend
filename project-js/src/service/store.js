@@ -9,6 +9,7 @@ const initData = {
   email: "",
   phone: "",
   authenticated: false,
+  wallet: 0,
 };
 
 const useStore = create(
@@ -29,6 +30,10 @@ const useStore = create(
     setProgress: (progress) =>
       set((state) => {
         state.progress = progress;
+      }),
+    setPoints: (points) =>
+      set((state) => {
+        state.user.wallet = points;
       }),
   }))
 );

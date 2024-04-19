@@ -11,7 +11,6 @@ import useStore from "../service/store";
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
-
 function Questions() {
   const { data, isLoading, error } = useQuestion();
   const setProgress = useStore((state) => state.setProgress);
@@ -51,11 +50,13 @@ function QuestionsForm({ questionData }) {
     mutate({ fk_choice: data.answer, fk_question: id });
   };
   const progress = useStore((state) => state.progress);
+  const setPoints = useStore((state) => state.setPoints);
   if (progress == "0%") {
     return <Redirect msg="You didn't answer in time." />;
   }
 
   if (isSuccess) {
+    setPoints(data["wallet"]);
     return (
       <Redirect
         msg={`Your Answer is ${data["correct"] ? "correct" : "wrong"}`}
